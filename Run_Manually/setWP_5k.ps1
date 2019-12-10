@@ -1,9 +1,8 @@
-# Set wallpaper URL to download
-#$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg"
-$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/10848x10848.jpg"
+# Set wallpape URL to download
+$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg" #note 5k image has watermark
 
-# Set download destination (use timestamped filename)
-$wallpaperFile = "C:\Users\brand\Dropbox\wallpaper\wallpaper_$(get-date -f yyyy-MM-dd-HHMM).jpg"
+# Set download destination (use timestamped filename to retain manually downloaded file)
+$wallpaperFile = "C:\Users\brand\Dropbox\wallpaper\wallpaper_5k_$(get-date -f yyyy-MM-dd-HHMMss).jpg"
 
 "C:\temp\mybackup $(get-date -f yyyy-MM-dd).zip"
 
