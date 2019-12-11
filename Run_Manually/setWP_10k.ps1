@@ -4,9 +4,6 @@ $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/10848x1
 # Set download destination (use timestamped filename to retain manually downloaded file)
 $wallpaperFile = "C:\Users\brand\Dropbox\wallpaper\wallpaper_10k_$(get-date -f yyyy-MM-dd-HHMMss).jpg"
 
-"C:\temp\mybackup $(get-date -f yyyy-MM-dd).zip"
-
-
 # Download and apply wallpaper
 Invoke-WebRequest -Uri $wallpaperURL -OutFile $wallpaperFile
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value $wallpaperFile
