@@ -1,5 +1,6 @@
 # Set wallpaper URL to download
-$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg"
+# $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg"
+$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"
 
 # Set download destination (use timestamped filename)
 $wallpaperFile = "C:\Users\brand\Dropbox\wallpaper\wallpaper.jpg"
