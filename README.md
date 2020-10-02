@@ -1,11 +1,11 @@
 # GOES16_PowerShell_Wallpaper
-Download latest GEOCOLOR full disk image from NOAA GOES16 and set as windows wallpaper.
+Download latest DayCloudPhase or GEOCOLOR full disk image from NOAA GOES16 and set as windows wallpaper.
 
 All image credit to [NOAA STAR](https://www.star.nesdis.noaa.gov/star/index.php).
 
 GOES-East Resources:   
 
-* [Latest 5k x 5k](https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg)    
+* [Latest 5k x 5k GEOCOLOR (realistic)](https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg)    
 * [Archive]( https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/)
 * [Full Disk browser](https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G16)
 * [Animated GIF](https://www.star.nesdis.noaa.gov/GOES/fulldisk_band.php?sat=G16&band=GEOCOLOR&length=240)
