@@ -8,6 +8,7 @@
 # powershell current time https://stackoverflow.com/questions/52285389/assign-current-time-to-powershell-variable
 # datetime.tostring format https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1
 $hour = [datetime]::now.ToString('HH')
+$hour = [int]::Parse($hour)
 if(($hour -gt 3) -and ($name -lt 17)){
   $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/DayCloudPhase/1808x1808.jpg"
 }else{
