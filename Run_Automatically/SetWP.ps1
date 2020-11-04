@@ -1,11 +1,24 @@
 # Set wallpaper URL to download
 # $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg"
 
-#$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"
-$wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/DayCloudPhase/1808x1808.jpg"
+# Conditional based on hour of day.
+# Between hour 4 and 16, download daucloudphase. otherwise download geocolor 
+
+# powershell logical https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-7
+# powershell current time https://stackoverflow.com/questions/52285389/assign-current-time-to-powershell-variable
+# datetime.tostring format https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1
+$hour = [datetime]::now.ToString('HH')
+if(($hour -gt 3) -and ($name -lt 17)){
+  $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/DayCloudPhase/1808x1808.jpg"
+}else{
+  $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"
+}
+
 
 # Set download destination (use timestamped filename)
 $wallpaperFile = "C:\Users\" + $env:UserName + "\Dropbox\wallpaper\wallpaper.jpg"
+
+
 
 
 # Download and apply wallpaper
