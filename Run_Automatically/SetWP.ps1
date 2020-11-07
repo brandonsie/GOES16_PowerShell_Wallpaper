@@ -9,7 +9,7 @@
 # datetime.tostring format https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1
 $hour = [datetime]::now.ToString('HH')
 $hour = [int]::Parse($hour)
-if(($hour -gt 3) -and ($name -lt 17)){
+if(($hour -gt 3) -and ($hour -lt 17)){
   $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/DayCloudPhase/1808x1808.jpg"
 }else{
   $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"
