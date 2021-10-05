@@ -1,8 +1,7 @@
 # Set wallpaper URL to download
-# $wallpaperURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg"
 
 # Conditional based on hour of day.
-# Between hour 4 and 16, download daucloudphase. otherwise download geocolor 
+# Between hour 4 and 16, download daycloudphase. otherwise download geocolor 
 
 # powershell logical https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-7
 # powershell current time https://stackoverflow.com/questions/52285389/assign-current-time-to-powershell-variable
