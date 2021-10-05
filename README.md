@@ -20,3 +20,4 @@ Misc. Notes:
 Himawari (Australia)
 http://rammb.cira.colostate.edu/ramsdis/online/himawari-8.asp
 http://rammb.cira.colostate.edu/ramsdis/online/archive_hi_res.asp?data_folder=himawari-8/full_disk_ahi_true_color&width=800&height=800
+
