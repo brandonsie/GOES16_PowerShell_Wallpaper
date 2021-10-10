@@ -3,7 +3,7 @@ Download latest DayCloudPhase or GEOCOLOR full disk image from NOAA GOES16 and s
 
 All image credit to [NOAA STAR](https://www.star.nesdis.noaa.gov/star/index.php).
 
-GOES-East Resources:   
+## GOES-East Resources:   
 
 * [Latest 5k x 5k GEOCOLOR (realistic)](https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg)    
 * [Archive]( https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/)
@@ -17,7 +17,14 @@ Misc. Notes:
 * 17:00 tends to be approximately fully lit
 
 
-Himawari (Australia)
-http://rammb.cira.colostate.edu/ramsdis/online/himawari-8.asp
-http://rammb.cira.colostate.edu/ramsdis/online/archive_hi_res.asp?data_folder=himawari-8/full_disk_ahi_true_color&width=800&height=800
+## Other Satellites
+* https://www.star.nesdis.noaa.gov/GOES/index.php
 
+
+### Himawari (Australia)
+* http://rammb.cira.colostate.edu/ramsdis/online/himawari-8.asp
+* http://rammb.cira.colostate.edu/ramsdis/online/archive_hi_res.asp?data_folder=himawari-8/full_disk_ahi_true_color&width=800&height=800
+
+
+### CONUS continental US
+* https://www.star.nesdis.noaa.gov/GOES/conus.php?sat=G16
