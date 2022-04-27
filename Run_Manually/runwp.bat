@@ -1,18 +1,39 @@
 @ECHO OFF
 
 :: Prompt for user input
-set /p WPINPUT="Press 1 for Geocolor, 2 for DayCloudPhase: " || set WPINPUT==1
+@REM set /p WPINPUT="Press 1 for Geocolor, 2 for DayCloudPhase: " || set WPINPUT==1
+@REM 
+@REM if %WPINPUT%== 2 (
+@REM   set WPTYPE=DayCloudPhase
+@REM ) else (
+@REM   set WPTYPE=GEOCOLOR
+@REM ) 
+@REM echo Downloading %WPTYPE%
 
-if %WPINPUT%== 2 (
-  set WPTYPE=DayCloudPhase
-) else (
-  set WPTYPE=GEOCOLOR
-) 
-echo Downloading %WPTYPE%
+:START
+set waitMins=1
+echo Press 1 for GeoColor, 2 for DayCloudPhase. Default GeoColor will be selected in %waitMins% minute(s).
+
+:: Calculate Seconds
+set /a waitMins=waitMins*60
+
+:: Choices are n and c, default choice is n, timeout = 1800 seconds
+choice /c 12 /d 1 /t %waitMins%
+
+:: [N]ow = 1; [C]ancel = 2
+goto Label%errorlevel%
+
+:Label1
+set WPTYPE=GEOCOLOR
+
+:: Make sure that the process doesn't fall through to Lable2
+goto :DL
+
+:Label2 
+set WPTYPE=DayCloudPhase
 
 
-:: timeout 10000
-
+:DL
 :: Download Wallpaper.
 set "dbdir=C:\Users\%USERNAME%\Dropbox\"
 set "scrdir=%dbdir%3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually/"

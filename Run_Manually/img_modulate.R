@@ -30,21 +30,22 @@ out_img <- magick::image_border(out_img, "black", "0x200")
 
 # overlay colorful background
 out_img2 <- magick::image_border(out_img, "black", "1029x0")
-img2 <- magick::image_read("C:/Users/Brandon/Dropbox/Photos/Wallpaper/wpoverlay_2.png")
+img2 <- magick::image_read("C:/Users/Brandon/Dropbox/Photos/Wallpaper/wpoverlay_3.png")
 imgstack <- magick::image_mosaic(c(out_img2, img2))
 imgstack <- magick::image_flatten(imgstack)
 out_img <- imgstack
 
-# overlay text
-out_img <- out_img %>% magick::image_annotate(
-  text = paste0("Updated: ", Sys.time()), 
-  size = 30, 
-  color = "white", #boxcolor = "pink",
-  # degrees = 60, 
-  gravity = "southeast",
-  location = "+50+100",
-  font = "Times"
-) 
+# # overlay text timestamp
+# out_img <- out_img %>% magick::image_annotate(
+#   text = paste0("Updated: ", Sys.time()), 
+#   size = 30, 
+#   color = "white", #boxcolor = "pink",
+#   # degrees = 60, 
+#   gravity = "southeast",
+#   location = "+50+100",
+#   font = "Times"
+# ) 
+
 # write
 magick::image_write(out_img, path) # write image
 
