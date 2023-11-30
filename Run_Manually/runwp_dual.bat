@@ -1,5 +1,6 @@
 @ECHO OFF
 
+:: DOWNLOAD BOTH GOES-EAST and GOES-WEST. then append them together into single wallpaper
 :: Prompt for user input
 @REM set /p WPINPUT="Press 1 for Geocolor, 2 for DayCloudPhase: " || set WPINPUT==1
 @REM 
@@ -39,17 +40,23 @@ set "dbdir=C:\Users\%USERNAME%\Nextcloud\"
 set "scrdir=%dbdir%3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually/"
 set "imgdir=%dbdir%B\Wallpaper\"
 
-set "wpurl=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/%WPTYPE%/1808x1808.jpg"
+:: GOES18 is west (new, #1) GOES16 is east (original #2)
+set "wpurl1=https://cdn.star.nesdis.noaa.gov/GOES18/ABI/FD/%WPTYPE%/1808x1808.jpg"
 
-set "wppath=%imgdir%wallpaper.jpg"%
-%
+set "wpurl2=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/%WPTYPE%/1808x1808.jpg"
 
-PowerShell.exe -Command %scrdir%"dlwp.ps1" -wpurl %wpurl% -wppath %wppath%
+:: wppath output file after R processing. wppath1 west, wppath2 east
+set "wppath=%imgdir%wallpaper.jpg" 
+set "wppath1=%imgdir%wallpaper1.jpg"
+set "wppath2=%imgdir%wallpaper2.jpg"
+
+PowerShell.exe -Command %scrdir%"dlwp.ps1" -wpurl %wpurl1% -wppath %wppath1%
+PowerShell.exe -Command %scrdir%"dlwp.ps1" -wpurl %wpurl2% -wppath %wppath2%
 
 :: Modify Wallpaper
 set "blpath=%scrdir%black.png"
 
-"C:\Program Files\R\R-4.1.1\bin\Rscript.exe" %scrdir%img_modulate.R %wppath% %blpath%
+"C:\Program Files\R\R-4.1.1\bin\Rscript.exe" %scrdir%img_modulate_dual.R %wppath1% %wppath2% %blpath%
 
 :: Set Wallpaper
 PowerShell.exe -Command %scrdir%"setwp.ps1" -image %wppath%

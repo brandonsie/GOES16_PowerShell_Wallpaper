@@ -18,7 +18,7 @@ $method = 2
 
 if($method -eq 1){
   # Set download destination (use timestamped filename)
-  $wallpaperFile = "C:\Users\" + $env:UserName + "\Dropbox\wallpaper\wallpaper.jpg"
+  $wallpaperFile = "C:\Users\" + $env:UserName + "\Nextcloud\B\Wallpaper\wallpaper.jpg"
 } else{
   # Set download destination (use timestamped filename)
   # C:\Users\Brandon\AppData\Roaming\Microsoft\Windows\Themes # TranscodedWallpaper, Transcoded_001

@@ -6,8 +6,8 @@ blackpath = args[[2]] %>% as.character
 
 if(FALSE){
   # for debugging
-  path <- "C:/Users/Brandon/Dropbox/Photos/Wallpaper/wallpaper.jpg"
- blackpath <- "C:/Users/Brandon/Dropbox/3_Programming/GOES16_PowerShell_Wallpaper/Run_Manually/black.png" 
+  path <- "C:/Users/Brandon/Nextcloud/B/Wallpaper/wallpaper.jpg"
+ blackpath <- "C:/Users/Brandon/Nextcloud/3_Programming/GOES16_PowerShell_Wallpaper/Run_Manually/black.png" 
 }
 
 img <- magick::image_read(path) # read image
@@ -30,10 +30,14 @@ out_img <- magick::image_border(out_img, "black", "0x200")
 
 # overlay colorful background
 out_img2 <- magick::image_border(out_img, "black", "1029x0")
-img2 <- magick::image_read("C:/Users/Brandon/Dropbox/Photos/Wallpaper/wpoverlay_3.png")
+img2 <- magick::image_read("C:/Users/Brandon/Nextcloud/B/Wallpaper/wpoverlay_3c_black.png")
 imgstack <- magick::image_mosaic(c(out_img2, img2))
 imgstack <- magick::image_flatten(imgstack)
 out_img <- imgstack
+
+
+# zoom out more
+out_img <- magick::image_border(out_img, "black", "2000x2000")
 
 # # overlay text timestamp
 # out_img <- out_img %>% magick::image_annotate(
