@@ -45,7 +45,7 @@ https://rammb-slider.cira.colostate.edu/?sat=himawari&sec=full_disk&x=11008&y=11
 
 
 ### Europe / Africa / Indian Ocean
-- Meteostat https://www.goes.noaa.gov/f_meteo.html
+- Meteosat https://www.goes.noaa.gov/f_meteo.html
 	- https://view.eumetsat.int/
 	- https://www.eumetsat.int/imagery/earth-view  
 	- https://eumetview.eumetsat.int/static-images/MSG/IMAGERY/IR108/BW/FULLDISC/
@@ -56,6 +56,8 @@ https://rammb-slider.cira.colostate.edu/?sat=himawari&sec=full_disk&x=11008&y=11
 		41.5 degree tropical airmass https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSGIODC_RGBTropicalAirmass_LowResolution.jpg
 - Indian Ocean https://www.goes.noaa.gov/f_ind.html
 
+## Other links
+- eclipses in satellite imagery eumetsat https://www.eumetsat.int/eclipses-captured-satellite-imagery 
 
 ## ToDo
 - [x] merge GOES-West and GOES-East full disk images into single wallpaper
