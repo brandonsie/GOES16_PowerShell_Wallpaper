@@ -1,5 +1,5 @@
 
-`%>%` <- magrittr::`%>%`
+`%>%` <- magick::`%>%`
 args = commandArgs(TRUE)
 path1 = args[[1]] %>% as.character
 path2 = args[[2]] %>% as.character
@@ -19,6 +19,15 @@ if(FALSE){
   # path3 <- "C:/Users/Brandon/Nextcloud/Photos/Wallpaper/wallpaper3.jpg"
   path4 <- "C:/Users/Brandon/Nextcloud/Photos/Wallpaper/wallpaper4.jpg"
   blackpath <- "C:/Users/Brandon/Nextcloud/3_Programming/GOES16_PowerShell_Wallpaper/Run_Manually/black.png" 
+  
+  imgdir="/mnt/c/Users/Brandon/Nextcloud/Photos/Wallpaper/"
+  path1=paste0(imgdir, "wallpaper1.jpg")
+  path2=paste0(imgdir, "wallpaper2.jpg")
+  path4=paste0(imgdir, "wallpaper4.jpg")
+  blackpath="/mnt/c/Users/Brandon/Nextcloud/3_Programming/GOES16_Powershell_Wallpaper/Linux/black.png"
+  overlay="/mnt/c/Users/Brandon/Nextcloud/3_Programming/GOES16_Powershell_Wallpaper/Linux/wpoverlay_3c_black.png"
+  out_path="/mnt/c/Users/Brandon/Nextcloud/Photos/Wallpaper/wallpaper.jpg"
+
 }
 
 img1 <- magick::image_read(path1) # read image

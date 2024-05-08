@@ -1,12 +1,11 @@
 #!/bin/bash
 # configure data paths here. read by dl_three.sh
-#(!) todo put config in gitignore. keep config_template as example parameters.
 
 
-dbdir="/mnt/c/Users/Brandon/Nextcloud/"
+dbdir="/home/brandon/Documents/Nextcloud/"
 scrdir=$dbdir"3_Programming/GOES16_Powershell_Wallpaper/Linux/"
-imgdir=$dbdir"Photos/Wallpaper/"
-#imgdir=$scrdir
+imgdir=$dbir"Photos/Wallpaper/"
+
 
 imgresolution="1808x1808" # image resolution to download. matches file name in goes archive
 # himawari i'm only downloading 800x800

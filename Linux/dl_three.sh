@@ -65,8 +65,9 @@ if [ $timetype = 1 ]; then
 	doy=$(date +%j) # get day of year
 	pdoy=$((doy-1)) # get previous day, guaranteeing data is available
 	month=$(date +"%m")
-	day=$(date +"%d")
+	day=$(date +"%d" | sed 's/^0*//') # for goes: need to trim leading zeroes https://stackoverflow.com/questions/11123717/removing-leading-zeros-before-passing-a-shell-variable-to-another-command
 	pday=$((day-1)) # get previous day, guaranteed data is available.
+	printf -v ppday "%02g" $pday # for himawari, need to repad day to 2 numbers if singel number
 
 	wpurl1="https://cdn.star.nesdis.noaa.gov/GOES18/ABI/FD/$imgtitle/$year$pdoy${wp1time}_GOES18-ABI-FD-GEOCOLOR-$imgresolution.jpg"
 	wpurl2="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/$imgtitle/$year$pdoy${wp2time}_GOES16-ABI-FD-GEOCOLOR-$imgresolution.jpg"
@@ -76,7 +77,7 @@ if [ $timetype = 1 ]; then
 	# wpurl4="https://rammb.cira.colostate.edu/ramsdis/online/images/himawari-8/full_disk_ahi_true_color/full_disk_ahi_true_color_20240418153000.jpg
 	# https://rammb.cira.colostate.edu/ramsdis/online/images/himawari-8/full_disk_ahi_true_color/full_disk_ahi_true_color_20240418030000.jpg
 	# only 800x800 is available?
-	 wpurl4="https://rammb.cira.colostate.edu/ramsdis/online/images/himawari-8/full_disk_ahi_true_color/full_disk_ahi_true_color_$year$month$pday$wp4time.jpg"
+	 wpurl4="https://rammb.cira.colostate.edu/ramsdis/online/images/himawari-8/full_disk_ahi_true_color/full_disk_ahi_true_color_$year$month$ppday$wp4time.jpg"
 	
 fi
 
@@ -91,6 +92,7 @@ fi
 	echo $wpurl2
 	echo $wpurl4
 
+20241281700_GOES16-ABI-FD-GEOCOLOR-1808x1808.jpg
 
 # Download
 curl -o ${imgdir}"wallpaper1.jpg" $wpurl1
@@ -98,7 +100,7 @@ curl -o ${imgdir}"wallpaper2.jpg" $wpurl2
 curl -o ${imgdir}"wallpaper4.jpg" $wpurl4
 
 # Image process in rammb# sudo apt install r-base-core
-Rscript ${scrdir}img_modulate_tri.R "wallpaper1.jpg" "wallpaper2.jpg" "" "wallpaper4.jpg" $scrdir"black.png" "wpoverlay_3c_black.png" "wallpaper.jpg"
+Rscript ${scrdir}img_modulate_tri.R  ${imgdir}"wallpaper1.jpg"  ${imgdir}"wallpaper2.jpg" ""  ${imgdir}"wallpaper4.jpg"  ${scrdir}"black.png"  ${scrdir}"wpoverlay_3c_black.png"  ${imgdir}"wallpaper.jpg"
 
 
 
