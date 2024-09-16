@@ -5,7 +5,7 @@
 
 dbdir="/mnt/c/Users/Brandon/Nextcloud/"
 scrdir=$dbdir"3_Programming/GOES16_Powershell_Wallpaper/Linux/"
-imgdir=$dbdir"Photos/Wallpaper/"
+imgdir=$dbdir"2_Brandon/Wallpaper/"
 #imgdir=$scrdir
 
 imgresolution="1808x1808" # image resolution to download. matches file name in goes archive
